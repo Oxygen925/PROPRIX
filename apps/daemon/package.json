@@ -1,0 +1,28 @@
+{
+  "name": "@proprix/daemon",
+  "version": "0.2.0",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "cd ../.. && PROPRIX_DATA_DIR=.data PROPRIX_UI_ORIGIN=http://127.0.0.1:5173 bun --watch apps/daemon/src/main.ts",
+    "dev:mock": "cd ../.. && PROPRIX_DATA_DIR=.data/mock PROPRIX_SIWC_BASE=http://127.0.0.1:47900 PROPRIX_CALLBACK_PORT=47901 PROPRIX_UI_ORIGIN=http://127.0.0.1:5173 bun --watch apps/daemon/src/main.ts",
+    "start": "PROPRIX_WEB_DIR=../web/build bun src/main.ts",
+    "memory:eval": "bun src/memory/eval/run.ts",
+    "check": "tsc -p ."
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.3.2",
+    "@modelcontextprotocol/client": "2.4.0",
+    "@mozilla/readability": "0.6.0",
+    "@proprix/shared": "workspace:*",
+    "@proprix/siwc": "workspace:*",
+    "diff": "^9.0.0",
+    "fflate": "^0.8.3",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/server": "2.4.0",
+    "@proprix/mock-siwc": "workspace:*"
+  }
+}

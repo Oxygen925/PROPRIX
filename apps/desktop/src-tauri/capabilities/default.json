@@ -1,0 +1,17 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "앱 창: 창 보이기(알림 클릭), 네이티브 알림, 시작 시 자동 실행, 외부 링크를 시스템 브라우저로, 작업 폴더 고르기(폴더 선택 창). daemon 실행(shell)은 Rust 에서만",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "core:window:allow-show",
+    "core:window:allow-unminimize",
+    "core:window:allow-set-focus",
+    "notification:default",
+    "autostart:default",
+    "opener:allow-open-url",
+    "opener:allow-default-urls",
+    "dialog:allow-open"
+  ]
+}

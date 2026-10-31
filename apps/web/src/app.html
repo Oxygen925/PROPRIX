@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko" data-theme="studio">
+	<head>
+		<script>
+			// 화면 크기·테마: 첫 화면부터 맞게 (깜박임 방지)
+			try {
+				const s = localStorage.getItem('proprix.scale');
+				if (s === 'small' || s === 'large') document.documentElement.dataset.scale = s;
+				if (localStorage.getItem('proprix.railLabels') === '1') document.documentElement.dataset.rail = 'labels';
+				const theme = localStorage.getItem('proprix.theme');
+				const themeCss = localStorage.getItem('proprix.themeCss');
+				if (theme && theme !== 'studio' && themeCss) {
+					document.documentElement.dataset.theme = theme;
+					const style = document.createElement('style');
+					style.id = 'proprix-theme-css';
+					style.textContent = themeCss;
+					document.head.append(style);
+				}
+			} catch {}
+		</script>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="text-scale" content="scale" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>

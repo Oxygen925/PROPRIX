@@ -1,0 +1,456 @@
+{
+  "description": "합성 예시셋 (가상 사용자, 개인정보 없음)",
+  "memories": [
+    { "key": "m01", "kind": "fact", "content": "고향은 부산이다", "contentEn": "Hometown is 부산 (Busan)" },
+    { "key": "m02", "kind": "fact", "content": "서울 마포구에 산다", "contentEn": "Lives in Mapo-gu, Seoul" },
+    {
+      "key": "m03",
+      "kind": "relationship",
+      "content": "여동생 이름은 민지이다",
+      "contentEn": "Younger sister is named 민지 (Minji)",
+      "importance": 4
+    },
+    {
+      "key": "m04",
+      "kind": "relationship",
+      "content": "남자친구 이름은 도윤이다",
+      "contentEn": "Boyfriend is named 도윤 (Doyun)",
+      "importance": 4
+    },
+    {
+      "key": "m05",
+      "kind": "fact",
+      "content": "고양이 두 마리를 키운다: 나비와 치즈",
+      "contentEn": "Has two cats: 나비 (Nabi) and 치즈 (Cheese)"
+    },
+    {
+      "key": "m06",
+      "kind": "fact",
+      "content": "직업은 백엔드 개발자이다",
+      "contentEn": "Works as a backend developer"
+    },
+    {
+      "key": "m07",
+      "kind": "fact",
+      "content": "회사에서 주로 Go 와 PostgreSQL 을 쓴다",
+      "contentEn": "Mainly uses Go and PostgreSQL at work"
+    },
+    {
+      "key": "m08",
+      "kind": "preference",
+      "content": "커피보다 녹차를 좋아한다",
+      "contentEn": "Prefers green tea over coffee",
+      "supersededBy": "m09"
+    },
+    {
+      "key": "m09",
+      "kind": "preference",
+      "content": "요즘은 디카페인 커피를 즐겨 마신다",
+      "contentEn": "These days enjoys drinking decaf coffee"
+    },
+    {
+      "key": "m10",
+      "kind": "fact",
+      "content": "땅콩 알레르기가 있다",
+      "contentEn": "Allergic to peanuts",
+      "importance": 5
+    },
+    {
+      "key": "m11",
+      "kind": "preference",
+      "content": "매운 음식을 잘 못 먹는다",
+      "contentEn": "Cannot handle spicy food well"
+    },
+    {
+      "key": "m12",
+      "kind": "preference",
+      "content": "주말에는 등산을 즐긴다",
+      "contentEn": "Enjoys hiking on weekends"
+    },
+    {
+      "key": "m13",
+      "kind": "event",
+      "content": "다음 달 15일에 제주도 여행을 간다",
+      "contentEn": "Going on a trip to 제주도 (Jeju) on the 15th of next month"
+    },
+    {
+      "key": "m14",
+      "kind": "event",
+      "content": "지난주 금요일에 치과 예약이 있었다",
+      "contentEn": "Had a dentist appointment last Friday",
+      "expired": true
+    },
+    {
+      "key": "m15",
+      "kind": "fact",
+      "content": "생일은 3월 14일이다",
+      "contentEn": "Birthday is March 14",
+      "importance": 4
+    },
+    {
+      "key": "m16",
+      "kind": "preference",
+      "content": "아침형 인간이라 6시에 일어난다",
+      "contentEn": "An early riser who wakes up at 6"
+    },
+    {
+      "key": "m17",
+      "kind": "fact",
+      "content": "영어 회화를 공부하고 있다",
+      "contentEn": "Is studying English conversation"
+    },
+    {
+      "key": "m18",
+      "kind": "preference",
+      "content": "공포 영화는 싫어하고 로맨틱 코미디를 좋아한다",
+      "contentEn": "Dislikes horror movies and likes romantic comedies"
+    },
+    {
+      "key": "m19",
+      "kind": "fact",
+      "content": "운전면허는 있지만 차는 없다",
+      "contentEn": "Has a driver's license but no car"
+    },
+    {
+      "key": "m20",
+      "kind": "fact",
+      "content": "대학에서 컴퓨터공학을 전공했다",
+      "contentEn": "Majored in computer science at university"
+    },
+    {
+      "key": "m21",
+      "kind": "preference",
+      "content": "좋아하는 가수는 아이유이다",
+      "contentEn": "Favorite singer is 아이유 (IU)"
+    },
+    {
+      "key": "m22",
+      "kind": "relationship",
+      "content": "어머니는 김밥집을 운영하신다",
+      "contentEn": "Mother runs a gimbap restaurant"
+    },
+    {
+      "key": "m23",
+      "kind": "preference",
+      "content": "답장은 짧고 간단한 걸 좋아한다",
+      "contentEn": "Prefers short and simple replies",
+      "importance": 4
+    },
+    {
+      "key": "m24",
+      "kind": "fact",
+      "content": "헬스장은 화요일과 목요일에 간다",
+      "contentEn": "Goes to the gym on Tuesdays and Thursdays"
+    },
+    {
+      "key": "m25",
+      "kind": "preference",
+      "content": "비건은 아니지만 고기를 줄이는 중이다",
+      "contentEn": "Not vegan but cutting down on meat"
+    },
+    {
+      "key": "m26",
+      "kind": "event",
+      "content": "올해 안에 이직을 고민 중이다",
+      "contentEn": "Considering changing jobs within this year"
+    },
+    {
+      "key": "m27",
+      "kind": "fact",
+      "content": "노트북은 맥북 프로를 쓴다",
+      "contentEn": "Uses a MacBook Pro laptop",
+      "supersededBy": "m28"
+    },
+    {
+      "key": "m28",
+      "kind": "fact",
+      "content": "최근 윈도우 노트북으로 바꿨다",
+      "contentEn": "Recently switched to a Windows laptop"
+    },
+    {
+      "key": "m29",
+      "kind": "preference",
+      "content": "피아노를 배우고 싶어 한다",
+      "contentEn": "Wants to learn the piano"
+    },
+    { "key": "m30", "kind": "fact", "content": "강아지 털 알레르기가 있다", "contentEn": "Allergic to dog hair" },
+    {
+      "key": "m31",
+      "kind": "relationship",
+      "content": "친한 친구 서연과 매달 독서 모임을 한다",
+      "contentEn": "Has a monthly book club with close friend 서연 (Seoyeon)"
+    },
+    {
+      "key": "m32",
+      "kind": "preference",
+      "content": "좋아하는 음식은 김치찌개이다",
+      "contentEn": "Favorite food is kimchi stew",
+      "supersededBy": "m33"
+    },
+    {
+      "key": "m33",
+      "kind": "preference",
+      "content": "요즘 가장 좋아하는 음식은 쌀국수이다",
+      "contentEn": "Favorite food these days is pho (rice noodle soup)"
+    },
+    {
+      "key": "m34",
+      "kind": "fact",
+      "content": "출퇴근은 지하철 2호선을 탄다",
+      "contentEn": "Commutes on subway line 2"
+    },
+    {
+      "key": "m35",
+      "kind": "preference",
+      "content": "일할 때 lo-fi 음악을 듣는다",
+      "contentEn": "Listens to lo-fi music while working"
+    },
+    { "key": "m36", "kind": "fact", "content": "일본어를 조금 할 줄 안다", "contentEn": "Speaks a little Japanese" },
+    {
+      "key": "m37",
+      "kind": "event",
+      "content": "동생 민지가 다음 주에 결혼한다",
+      "contentEn": "Younger sister 민지 (Minji) is getting married next week",
+      "importance": 4
+    },
+    {
+      "key": "m38",
+      "kind": "preference",
+      "content": "사진 찍는 것을 좋아해서 필름 카메라를 모은다",
+      "contentEn": "Loves taking photos and collects film cameras"
+    },
+    { "key": "m39", "kind": "fact", "content": "잠은 보통 7시간 잔다", "contentEn": "Usually sleeps 7 hours" },
+    {
+      "key": "m40",
+      "kind": "preference",
+      "content": "단 음식은 별로 안 좋아한다",
+      "contentEn": "Does not like sweet food much"
+    }
+  ],
+  "queries": [
+    {
+      "type": "keyword",
+      "q": "땅콩 알레르기 있었나?",
+      "qEn": "Did I have a peanut allergy?",
+      "expect": ["m10"],
+      "allow": ["m30"]
+    },
+    { "type": "keyword", "q": "고양이 이름이 뭐였지", "qEn": "What were my cats' names?", "expect": ["m05"] },
+    {
+      "type": "keyword",
+      "q": "여동생 이름 알아?",
+      "qEn": "Do you know my younger sister's name?",
+      "expect": ["m03"],
+      "allow": ["m37"]
+    },
+    { "type": "keyword", "q": "제주도 여행 언제 가?", "qEn": "When am I going on the Jeju trip?", "expect": ["m13"] },
+    { "type": "keyword", "q": "생일이 언제였더라", "qEn": "When was my birthday?", "expect": ["m15"] },
+    { "type": "keyword", "q": "헬스장 가는 요일", "qEn": "Which days do I go to the gym?", "expect": ["m24"] },
+    {
+      "type": "keyword",
+      "q": "좋아하는 가수 기억해?",
+      "qEn": "Do you remember my favorite singer?",
+      "expect": ["m21"]
+    },
+    {
+      "type": "keyword",
+      "q": "어머니 가게가 뭐였지",
+      "qEn": "What kind of shop does my mother run?",
+      "expect": ["m22"]
+    },
+    { "type": "keyword", "q": "등산 좋아한다고 했나", "qEn": "Did I say I like hiking?", "expect": ["m12"] },
+    {
+      "type": "keyword",
+      "q": "회사에서 쓰는 언어",
+      "qEn": "Programming languages I use at work",
+      "expect": ["m07"],
+      "allow": ["m06"]
+    },
+    { "type": "keyword", "q": "지하철 몇 호선 타?", "qEn": "Which subway line do I take?", "expect": ["m34"] },
+    {
+      "type": "keyword",
+      "q": "필름 카메라 모은다고 했지",
+      "qEn": "Did I say I collect film cameras?",
+      "expect": ["m38"]
+    },
+    { "type": "keyword", "q": "일본어 할 줄 알아?", "qEn": "Can I speak Japanese?", "expect": ["m36"] },
+    {
+      "type": "keyword",
+      "q": "피아노 배우고 싶다고 했지",
+      "qEn": "Did I say I want to learn piano?",
+      "expect": ["m29"]
+    },
+    { "type": "keyword", "q": "독서 모임은 누구랑 해?", "qEn": "Who do I have the book club with?", "expect": ["m31"] },
+    { "type": "keyword", "q": "공포 영화 좋아해?", "qEn": "Do I like horror movies?", "expect": ["m18"] },
+    { "type": "keyword", "q": "전공이 뭐였지", "qEn": "What was my major?", "expect": ["m20"] },
+    { "type": "keyword", "q": "운전면허 있어?", "qEn": "Do I have a driver's license?", "expect": ["m19"] },
+    { "type": "keyword", "q": "치즈라는 고양이", "qEn": "The cat named Cheese", "expect": ["m05"] },
+    { "type": "keyword", "q": "마포구 어디 살아?", "qEn": "Where in Mapo-gu do I live?", "expect": ["m02"] },
+    { "type": "keyword", "q": "Go 언어 써?", "qEn": "Do I use the Go language?", "expect": ["m07"] },
+    { "type": "keyword", "q": "lo-fi 음악", "qEn": "lo-fi music", "expect": ["m35"] },
+
+    {
+      "type": "paraphrase",
+      "q": "나 뭐 먹으면 안 되는 거 있었지?",
+      "qEn": "Is there anything I shouldn't eat?",
+      "expect": ["m10"],
+      "allow": ["m11", "m30", "m40", "m25"]
+    },
+    {
+      "type": "paraphrase",
+      "q": "우리 집 반려동물 얘기 기억나?",
+      "qEn": "Do you remember my pets?",
+      "expect": ["m05"]
+    },
+    {
+      "type": "paraphrase",
+      "q": "내 직업이 뭐라고 했지?",
+      "qEn": "What did I say my job was?",
+      "expect": ["m06"],
+      "allow": ["m07"]
+    },
+    {
+      "type": "paraphrase",
+      "q": "어디 살고 있다고 했더라?",
+      "qEn": "Where did I say I live?",
+      "expect": ["m02"],
+      "allow": ["m01"]
+    },
+    {
+      "type": "paraphrase",
+      "q": "몇 시에 일어난다고 했지?",
+      "qEn": "What time did I say I wake up?",
+      "expect": ["m16"],
+      "allow": ["m39"]
+    },
+    {
+      "type": "paraphrase",
+      "q": "운동은 언제 한다고 했지?",
+      "qEn": "When did I say I exercise?",
+      "expect": ["m24"],
+      "allow": ["m12"]
+    },
+    { "type": "paraphrase", "q": "남친 이름 뭐였지?", "qEn": "What's my boyfriend's name?", "expect": ["m04"] },
+    { "type": "paraphrase", "q": "엄마는 무슨 일 하셔?", "qEn": "What does my mom do for work?", "expect": ["m22"] },
+    {
+      "type": "paraphrase",
+      "q": "어떤 음악 들으면서 일해?",
+      "qEn": "What music do I listen to while working?",
+      "expect": ["m35"],
+      "allow": ["m21"]
+    },
+    {
+      "type": "paraphrase",
+      "q": "고기 먹는 거 어떻게 생각해?",
+      "qEn": "How do I feel about eating meat?",
+      "expect": ["m25"]
+    },
+    {
+      "type": "paraphrase",
+      "q": "회사 옮길 생각 있다고 했었나?",
+      "qEn": "Did I mention thinking about moving to another company?",
+      "expect": ["m26"],
+      "allow": ["m06", "m07"]
+    },
+    {
+      "type": "paraphrase",
+      "q": "잠은 얼마나 자?",
+      "qEn": "How long do I sleep?",
+      "expect": ["m39"],
+      "allow": ["m16"]
+    },
+    { "type": "paraphrase", "q": "디저트 좋아해?", "qEn": "Do I like desserts?", "expect": ["m40"] },
+    { "type": "paraphrase", "q": "어떤 영화 장르 좋아해?", "qEn": "What movie genres do I like?", "expect": ["m18"] },
+    { "type": "paraphrase", "q": "차 갖고 있어?", "qEn": "Do I own a car?", "expect": ["m19"] },
+    {
+      "type": "paraphrase",
+      "q": "자기소개 할 때 출신이 어디라고 했지?",
+      "qEn": "Where did I say I'm from originally?",
+      "expect": ["m01"],
+      "allow": ["m02"]
+    },
+    { "type": "paraphrase", "q": "반려묘 이름", "qEn": "My pet cats' names", "expect": ["m05"] },
+    {
+      "type": "paraphrase",
+      "q": "취미가 뭐였지?",
+      "qEn": "What are my hobbies?",
+      "expect": ["m12", "m38"],
+      "allow": ["m29", "m31", "m35"]
+    },
+
+    {
+      "type": "past",
+      "q": "동생 결혼식이 언제였지?",
+      "qEn": "When is my sister's wedding?",
+      "expect": ["m37"],
+      "allow": ["m03"]
+    },
+    {
+      "type": "past",
+      "q": "지난번에 치과 간다고 했던 거",
+      "qEn": "The dentist appointment I mentioned before",
+      "expect": [],
+      "forbid": ["m14"]
+    },
+    { "type": "past", "q": "다음 달 여행 계획", "qEn": "My travel plans for next month", "expect": ["m13"] },
+    { "type": "past", "q": "대학 때 뭐 공부했어?", "qEn": "What did I study in college?", "expect": ["m20"] },
+    { "type": "past", "q": "영어 공부 아직 해?", "qEn": "Am I still studying English?", "expect": ["m17"] },
+    { "type": "past", "q": "알레르기 뭐 있었지?", "qEn": "What allergies do I have?", "expect": ["m10", "m30"] },
+    {
+      "type": "past",
+      "q": "가족 얘기 해줬던 거 기억나?",
+      "qEn": "Do you remember what I told you about my family?",
+      "expect": ["m03", "m22", "m37"],
+      "allow": ["m04"]
+    },
+    { "type": "past", "q": "친구 서연이랑 뭐 해?", "qEn": "What do I do with my friend Seoyeon?", "expect": ["m31"] },
+    { "type": "past", "q": "부산 출신이었나?", "qEn": "Am I from Busan?", "expect": ["m01"] },
+    {
+      "type": "past",
+      "q": "답장 스타일 어떻게 해주면 좋아?",
+      "qEn": "How do I like replies to be written?",
+      "expect": ["m23"]
+    },
+    { "type": "past", "q": "매운 거 먹을 수 있어?", "qEn": "Can I eat spicy food?", "expect": ["m11"] },
+    {
+      "type": "past",
+      "q": "컴퓨터 뭐 쓴다고 했지?",
+      "qEn": "What computer did I say I use?",
+      "expect": ["m28"],
+      "forbid": ["m27"]
+    },
+
+    { "type": "changed", "q": "커피 좋아해?", "qEn": "Do I like coffee?", "expect": ["m09"], "forbid": ["m08"] },
+    {
+      "type": "changed",
+      "q": "녹차 좋아한다고 했지?",
+      "qEn": "Did I say I like green tea?",
+      "expect": ["m09"],
+      "forbid": ["m08"]
+    },
+    {
+      "type": "changed",
+      "q": "제일 좋아하는 음식이 뭐야?",
+      "qEn": "What's my favorite food?",
+      "expect": ["m33"],
+      "forbid": ["m32"]
+    },
+    {
+      "type": "changed",
+      "q": "김치찌개 좋아했지?",
+      "qEn": "I liked kimchi stew, right?",
+      "expect": ["m33"],
+      "forbid": ["m32"]
+    },
+    { "type": "changed", "q": "맥북 쓰지?", "qEn": "I use a MacBook, right?", "expect": ["m28"], "forbid": ["m27"] },
+    { "type": "changed", "q": "노트북 뭐 써?", "qEn": "What laptop do I use?", "expect": ["m28"], "forbid": ["m27"] },
+    {
+      "type": "changed",
+      "q": "요즘 즐겨 마시는 음료",
+      "qEn": "What drink do I enjoy these days?",
+      "expect": ["m09"],
+      "forbid": ["m08"]
+    },
+    { "type": "changed", "q": "쌀국수 좋아해?", "qEn": "Do I like pho?", "expect": ["m33"], "forbid": ["m32"] }
+  ]
+}

@@ -1,0 +1,99 @@
+/* PROPRIX 디자인 토큰. 화면은 이 변수만 쓴다.
+   색은 테마마다 ([data-theme]), 간격·글자·움직임은 공통 (사용자 결정 2026-10-30: 기본 studio, 서브는 나중에) */
+:root,
+:root[data-theme="studio"] {
+  color-scheme: dark;
+
+  /* 면: 레일·목록·패널(가장 어두움) → 바탕 → 카드 → 떠 있는 것 */
+  --c-bg: #131318;
+  --c-surface-1: #0f0f13;
+  --c-surface-2: #1b1b21;
+  --c-surface-3: #24242b;
+  --c-hover: #1e1e24;
+  --c-selected: #24242b;
+
+  /* 선 */
+  --c-line: #26262d;
+  --c-line-strong: #2e2e36;
+  --c-line-stronger: #3e3e48;
+
+  /* 글자 */
+  --c-text: #f0eff2;
+  --c-text-2: #c8c6cf;
+  --c-text-3: #8d8b96;
+  --c-text-4: #75737e;
+
+  /* 강조: 차분한 파랑 (에이전트 색과 겹치지 않게). 주요 버튼·선택 표시 */
+  --c-accent: #3f72d6;
+  --c-accent-hover: #5082e3;
+  --c-on-accent: #ffffff;
+  --c-accent-bg: #172338;
+  --c-primary: var(--c-accent);
+  --c-primary-hover: var(--c-accent-hover);
+  --c-on-primary: var(--c-on-accent);
+
+  /* 상태 */
+  --c-working: #a78bfa;
+  --c-working-bg: #1c1730;
+  --c-waiting: #f5a524;
+  --c-waiting-bg: #16130b;
+  --c-waiting-line: #5b4a1a;
+  --c-done: #4ade80;
+  --c-done-bg: #0f1d14;
+  --c-success: var(--c-done);
+  --c-danger: #f87171;
+  --c-danger-bg: #1f1012;
+  --c-danger-line: #5b2226;
+  --c-info: #8ab4ff;
+  --c-info-bg: #111a2b;
+  --selection: #2a3d63;
+}
+
+:root {
+  /* 간격·반경·글자 */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --r-1: 0.375rem;
+  --r-2: 0.5rem;
+  --r-3: 0.625rem;
+  --r-4: 0.875rem;
+  --r-pill: 999px;
+  --t-xs: 0.6875rem;
+  --t-sm: 0.75rem;
+  --t-md: 0.8125rem;
+  --t-lg: 0.9375rem;
+  --t-xl: 1.125rem;
+  --t-2xl: 1.375rem;
+  --w-regular: 400;
+  --w-bold: 500;
+  --font: "Pretendard Variable", Pretendard, -apple-system, "Segoe UI", "Malgun Gothic", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", Consolas, monospace;
+
+  /* 움직임 */
+  --dur-fast: 120ms;
+  --dur: 200ms;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --focus-ring: 0 0 0 2px var(--c-bg), 0 0 0 0.25rem var(--c-info);
+
+  /* 배치 */
+  --rail-w: 2.75rem;
+  --sidebar-w: 14rem;
+  --panel-w: 18rem;
+  --list-w: 13rem;
+}
+
+/* 레일에 이름 표시 (설정 > 화면) */
+:root[data-rail="labels"] {
+  --rail-w: 4.25rem;
+}
+
+/* 좁은 창 (앱 최소 720px): 목록 패널을 줄여 대화 칸을 지킨다 */
+@media (max-width: 900px) {
+  :root {
+    --sidebar-w: 12.5rem;
+  }
+}

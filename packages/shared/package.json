@@ -1,0 +1,16 @@
+{
+  "name": "@proprix/shared",
+  "version": "0.0.0",
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "check": "tsc -p ."
+  },
+  "type": "module"
+}

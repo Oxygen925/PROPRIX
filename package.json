@@ -1,0 +1,29 @@
+{
+  "name": "proprix",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tools/*"
+  ],
+  "scripts": {
+    "dev": "bun run --filter '@proprix/daemon' --filter '@proprix/web' dev",
+    "dev:daemon": "bun run --filter '@proprix/daemon' dev",
+    "dev:mock": "bun run --filter '*' dev:mock",
+    "mock": "bun run --filter '@proprix/mock-siwc' start",
+    "build:web": "bun run --filter '@proprix/web' build",
+    "start": "bun run build:web && bun run --filter '@proprix/daemon' start",
+    "test": "bun test",
+    "check": "biome check . && bun run --filter '*' check",
+    "fix": "biome check --write .",
+    "app": "bun run --filter @proprix/desktop app",
+    "app:build": "bun run --filter @proprix/desktop app:build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.3",
+    "@types/bun": "^1.4.4",
+    "typescript": "^7.0.2"
+  }
+}
