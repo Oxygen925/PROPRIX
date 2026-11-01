@@ -156,7 +156,7 @@
 				]
 			: []),
 		{ label: '마크다운으로 내보내기', icon: IconDownload, onSelect: () => void run(exportCurrent) },
-		...(!lounge ? [{ label: '채팅 삭제', icon: IconTrash, danger: true, onSelect: () => (dialog = 'delete') }] : [])
+		{ label: '채팅 삭제', icon: IconTrash, danger: true, disabled: lounge && !!room?.running, onSelect: () => (dialog = 'delete') }
 	]);
 </script>
 
@@ -265,7 +265,11 @@
 </Dialog>
 
 <ConfirmDialog open={dialog === 'delete'} title="채팅 삭제" disabled={busy} onconfirm={remove} onclose={() => (dialog = '')}>
-	<p>'{room?.title}' 채팅과 그 안의 메시지·도구 기록·토론·리마인더를 삭제합니다. 기억은 남습니다.</p>
+	{#if lounge}
+		<p>라운지 채팅과 그 안의 메시지·실행 기록을 삭제합니다. 기억은 남습니다. 라운지를 다시 실행하면 새 채팅으로 시작합니다.</p>
+	{:else}
+		<p>'{room?.title}' 채팅과 그 안의 메시지·도구 기록·토론·리마인더를 삭제합니다. 기억은 남습니다.</p>
+	{/if}
 </ConfirmDialog>
 
 <WorkspaceDialog open={folderOpen} onclose={() => (folderOpen = false)} />

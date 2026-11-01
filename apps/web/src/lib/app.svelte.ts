@@ -1210,6 +1210,7 @@ class AppState {
 		await api(z.unknown(), `/rooms/${id}`, { method: 'DELETE' });
 		this.rooms = this.rooms.filter((r) => r.id !== id);
 		if (this.roomId === id) this.roomId = '';
+		if (this.lounge) this.lounge.recent = this.lounge.recent.filter((s) => s.roomId !== id);
 	}
 
 	// ---- 방 묶음 (사이드바) ----

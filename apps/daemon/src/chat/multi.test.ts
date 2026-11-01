@@ -696,6 +696,24 @@ test("라운지: 다른 응답 중·참가자 부족·예산 부족이면 시작
   expect((await s.memory.extractNow(session.roomId)).skipped).toBe("");
 });
 
+test("라운지 채팅 삭제: 진행 중에는 거절, 끝나면 지우고 다음 실행은 새 채팅으로", async () => {
+  const s = setup((who) => ({ text: who }));
+  const ids = [s.made[0]?.id ?? "", s.made[1]?.id ?? ""];
+  const first = s.chat.startLounge(ids, 2, "m", true);
+  if (typeof first === "string") throw new Error(first);
+  expect(s.chat.deleteRoom(first.roomId)).toBe("busy");
+  await s.chat.idle(first.roomId);
+
+  expect(s.chat.deleteRoom(first.roomId)).toBeNull();
+  expect(s.chat.loungeRoom()).toBeNull();
+
+  const next = s.chat.startLounge(ids, 2, "m", true);
+  if (typeof next === "string") throw new Error(next);
+  expect(next.roomId).not.toBe(first.roomId);
+  await s.chat.idle(next.roomId);
+  expect(s.chat.loungeRoom()?.id).toBe(next.roomId);
+});
+
 test("라운지 스케줄러: 꺼짐·시간대·하루 횟수·간격을 지키고, 조건이 맞으면 시작한다", async () => {
   const s = setup((who) => ({ text: who }));
   const ids = [s.made[0]?.id ?? "", s.made[1]?.id ?? ""];

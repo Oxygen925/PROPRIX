@@ -209,13 +209,21 @@
 				<IconUsersGroup size="1rem" stroke={1.75} aria-hidden="true" /> 그룹챗 만들기
 			</button>
 		{/each}
+
+		<div class="section">라운지</div>
 		{#if app.loungeRoom}
 			{@const l = app.loungeRoom}
 			<a class="item" class:active={l.id === currentRoom} href="/rooms/{l.id}">
-				<IconCoffee size="1rem" stroke={1.75} aria-hidden="true" />
+				<span class="stack" aria-hidden="true">
+					{#each l.agentIds.slice(0, 3) as id (id)}<Avatar agentId={id} size={1.5} motion="gaze" />{/each}
+				</span>
 				<span class="title">라운지</span>
 				{#if l.running}<span class="busy" aria-label="채팅 중"></span>{/if}
 				{#if app.unread.includes(l.id)}<span class="unread" aria-label="새 메시지"></span>{/if}
+			</a>
+		{:else}
+			<a class="item muted" href="/settings?s=lounge">
+				<IconCoffee size="1rem" stroke={1.75} aria-hidden="true" /> 라운지 설정
 			</a>
 		{/if}
 		{#if app.archivedRooms.length}
