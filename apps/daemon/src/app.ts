@@ -287,6 +287,7 @@ export function createApp(config: DaemonConfig, opts: AppOptions = {}): App {
     async stop() {
       account.cancelSignIn();
       memory.stop();
+      vectors.stop();
       lounge.stop();
       proactive.stop();
       taskScheduler.stop();

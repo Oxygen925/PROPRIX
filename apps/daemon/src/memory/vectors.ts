@@ -10,6 +10,7 @@ type ModelId = EmbeddingStatus["model"];
 export interface EmbedFns {
   embedQueries(texts: string[]): Promise<Float32Array[]>;
   embedDocs(texts: string[]): Promise<Float32Array[]>;
+  dispose?(): void;
 }
 export type EmbedLoader = (model: EmbeddingModel) => Promise<EmbedFns>;
 
@@ -57,6 +58,7 @@ export class VectorIndex {
     if (model === this.model && this.state !== "failed") return Promise.resolve();
     const gen = ++this.generation;
     this.model = model;
+    this.fns?.dispose?.();
     this.fns = null;
     this.error = "";
     if (model === "off") {
@@ -71,7 +73,10 @@ export class VectorIndex {
     const started = performance.now();
     return this.load(spec).then(
       (fns) => {
-        if (gen !== this.generation) return;
+        if (gen !== this.generation) {
+          fns.dispose?.();
+          return;
+        }
         this.fns = fns;
         this.state = "ready";
         console.log(`[embedding] ${model} 준비 ${(performance.now() - started).toFixed(0)}ms`);
@@ -85,8 +90,16 @@ export class VectorIndex {
     );
   }
 
+  // 앱 종료: 임베딩 프로세스를 끝낸다
+  stop() {
+    this.generation++;
+    this.fns?.dispose?.();
+    this.fns = null;
+  }
+
   private fail(err: unknown) {
     this.state = "failed";
+    this.fns?.dispose?.();
     this.fns = null;
     this.error = err instanceof Error ? err.message : String(err);
     console.warn(`[embedding] 실패 — 키워드 검색만 사용: ${this.error}`);

@@ -3,7 +3,7 @@
 ChatGPT 계정으로 로그인(Sign in with ChatGPT)해 본인 플랜으로 동작하는 개인용 멀티 에이전트 앱.
 페르소나, 장기 메모리, 도구 호출·선제 메시지, 에이전트 간 상호작용(그룹챗·위임·자율 대화·토론)을 목표로 한다.
 
-> 상태: 0.2.0 시험 배포. Windows x64 전용이며 OpenAI 와 관계없는 개인 프로젝트다. [개인정보 안내](PRIVACY.md), 메모리 검색 평가는 [docs/memory-eval.md](docs/memory-eval.md). 설치본의 제3자 라이선스는 `THIRD_PARTY_NOTICES.txt` 로 함께 배포한다. ChatGPT 로고(`apps/web/src/lib/assets/chatgpt-logo-white.svg`)는 OpenAI 의 상표로 MIT 라이선스 대상이 아니다. 설정에서 고를 수 있는 EmbeddingGemma 는 이 저장소에 들어 있지 않다. Gemma is provided under and subject to the Gemma Terms of Use found at [ai.google.dev/gemma/terms](https://ai.google.dev/gemma/terms).
+> 상태: 0.2.1 시험 배포. Windows x64 전용이며 OpenAI 와 관계없는 개인 프로젝트다. [개인정보 안내](PRIVACY.md), 메모리 검색 평가는 [docs/memory-eval.md](docs/memory-eval.md). 설치본의 제3자 라이선스는 `THIRD_PARTY_NOTICES.txt` 로 함께 배포한다. ChatGPT 로고(`apps/web/src/lib/assets/chatgpt-logo-white.svg`)는 OpenAI 의 상표로 MIT 라이선스 대상이 아니다. 설정에서 고를 수 있는 EmbeddingGemma 는 이 저장소에 들어 있지 않다. Gemma is provided under and subject to the Gemma Terms of Use found at [ai.google.dev/gemma/terms](https://ai.google.dev/gemma/terms).
 
 ## 기능
 
@@ -50,7 +50,7 @@ bun run app:build  # Windows 앱 설치 파일 (apps/desktop/src-tauri/target/re
 ```
 
 앱은 Rust 툴체인(MSVC)과 WebView2 가 필요하다. 데이터는 `%APPDATA%\PROPRIX` 를 쓰며, 개발 빌드는 그 폴더가 비어 있으면
-저장소의 `.data` 를 한 번 가져온다(로그인 제외). 앱의 daemon 은 아직 로컬 임베딩을 불러오지 못해 키워드 검색만 쓴다.
+저장소의 `.data` 를 한 번 가져온다(로그인 제외).
 앱과 `bun run dev` 를 같은 데이터로 동시에 쓰면 리마인더·체크인이 두 번 갈 수 있으니 하나만 켠다.
 
 환경 변수: `PROPRIX_PORT`, `PROPRIX_DATA_DIR`(기본 `%APPDATA%\PROPRIX`), `PROPRIX_WEB_DIR`, `PROPRIX_API_TOKEN`, `PROPRIX_UI_ORIGIN`, `PROPRIX_ALLOWED_ORIGINS`, `PROPRIX_SIWC_BASE`(모의 서버, `http://127.0.0.1:<port>` 만), `PROPRIX_CALLBACK_PORT`(기본 1455).

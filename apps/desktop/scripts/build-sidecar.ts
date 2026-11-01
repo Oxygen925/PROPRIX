@@ -1,6 +1,5 @@
 // Tauri 앞 단계: SPA 를 빌드하고 daemon 을 단일 실행 파일(sidecar)로 묶는다.
-// @huggingface/transformers(onnxruntime 네이티브 모듈)는 묶지 않는다 — 앱에서는 로컬 임베딩을 불러오지 못해
-// 키워드 검색만 쓴다 (P5c 에서 해결)
+// @huggingface/transformers(onnxruntime 네이티브 모듈)는 묶지 않고 embedding-runtime 폴더로 함께 설치한다
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
 
@@ -18,6 +17,7 @@ mkdirSync(outDir, { recursive: true });
 const out = join(outDir, `proprix-daemon-${triple}${process.platform === "win32" ? ".exe" : ""}`);
 
 run(["bun", "apps/desktop/scripts/build-notices.ts"]); // SPA 빌드에 포함되도록 먼저
+run(["bun", "apps/desktop/scripts/build-embedding-runtime.ts"]);
 run(["bun", "run", "build:web"]);
 run([
   "bun",
